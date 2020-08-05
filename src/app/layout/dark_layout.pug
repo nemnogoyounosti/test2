@@ -1,0 +1,32 @@
+include elements/mixins
+include ../templates/parts/extends-ui
+include ../templates/parts/custom-ui
+
+doctype html
+html(class="no-js" lang="ru")
+    head
+        include elements/head
+
+    body
+        include elements/ie
+        div(layout="dark" use-defaults-style="no")#page
+            header
+                section.header-content
+                    block header
+                        include ../templates/default/dark_header
+
+            section.content-container
+                div.content
+                    // HEADER END
+
+                    // CONTENT START
+                    block content
+                    // CONTENT END
+
+                    // FOOTER START
+            footer
+                section.footer-content
+                    block footer
+                        include ../templates/default/dark_footer
+
+        include elements/scripts

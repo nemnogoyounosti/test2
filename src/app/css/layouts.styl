@@ -1,0 +1,288 @@
+// Основная тема
+#page[layout=main]
+  //header
+  //  background-color: $header-bg
+  //  & .header-content
+  //    display flex
+  //    align-items center
+  //    & *
+  //      color white
+  //      font-size: 30px
+
+
+  .articles
+    &__body
+      height: 100%
+      width: 100%
+      max-width: 1288px
+      margin: 0 auto
+      @media screen and (max-width 1366px)
+        max-width 960px
+      .articles__main
+        background: linear-gradient(90deg, #F7636B 0%, #FBB1B5 100%)
+        border-radius: 16px
+        padding: 40px 16px 26px
+        position relative
+        @media screen and (max-width 414px)
+          padding 40px 8px 15px
+        .articles__up
+          display flex
+          @media screen and (max-width 600px)
+            flex-direction: column
+          &-description
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            @media screen and (max-width 600px)
+              margin-bottom: 40px
+            h3
+              font-size: 24px
+              color: white
+              letter-spacing: 0.1em
+              font-family: montserratblack
+              line-height: 32px
+              text-transform: uppercase
+              margin-bottom 25px
+              @media screen and (max-width 600px)
+                margin-bottom: 15px
+            span
+              font-size: 14px
+              color white
+              font-family: montserratregular
+              text-transform uppercase
+          .hr
+            hr
+              margin: 0
+              border-top: 4px solid #fff
+              width: 150px
+              position: relative
+              top: -7px
+              @media screen and (max-width 600px)
+                display none
+          &-slider
+            max-width: 952px
+            @media screen and (max-width 1366px)
+              max-width 629px
+            @media screen and (max-width 992px)
+              max-width 545px
+            @media screen and (max-width 767px)
+              max-width: 370px
+            @media screen and (max-width 600px)
+              max-width: 100%
+            .slick-prev
+              z-index 999
+              top 28%
+              left: 15px
+              @media screen and (max-width 767px)
+                left 10px
+                top 31%
+              @media screen and (max-width 600px)
+                left -16px
+              &:before
+                content: ''
+                background-image: url('arrow_left.png')
+                width: 48px
+                background-repeat: no-repeat
+                height: 48px
+                display: block
+                opacity 1
+            .slick-next
+              z-index 999
+              top 28%
+              right: 43px
+              @media screen and (max-width 767px)
+                right 25px
+                top 31%
+              @media screen and (max-width 600px)
+                right 12px
+              &:before
+                content: ''
+                background-image: url('arrow_right.png')
+                width: 48px
+                background-repeat: no-repeat
+                height: 48px
+                display: block
+                opacity: 1;
+            .slick-slide
+              width: 304px
+              margin: 0 10px
+              @media screen and (max-width 1366)
+                width: 300px
+                margin 0 13px
+              @media screen and (max-width 992px)
+                width: 280px
+                margin: 0 -3px
+              @media screen and (max-width 767px)
+                margin-left: 40px
+              @media screen and (max-width 600px)
+                margin: 0 29px
+                width: 262px
+              .item-slider
+                a
+                  outline none
+                  p
+                    color white
+                    font-size: 18px
+                    font-family: montserratbold
+                    line-height 24px
+                    margin-top 15px
+                  img
+                    @media screen and (max-width 992px)
+                      width: 260px
+                    @media screen and (max-width 767px)
+                      width auto
+            .item-slider
+              width: 300px
+              margin: 0 auto
+              margin-bottom: 25px
+              @media screen and (max-width 414px)
+                width: 100%
+              a
+                outline none
+                p
+                  color white
+                  font-size: 18px
+                  font-family: montserratbold
+                  line-height 24px
+                  margin-top 15px
+                img
+                  @media screen and (max-width 414px)
+                    width: 100%
+        .hr_2
+          hr
+            border-top: none
+            margin: 0
+            position: absolute
+            width: 100%
+            z-index: 999
+            top: auto
+            margin-top: 40px
+            background:url('Line.png')
+            height: 2px
+            @media screen and (max-width 414px)
+              width: 95%
+              margin-top: 5px
+        .articles__down
+          .articles__down-list
+            margin-top 45px
+            width: 100%
+            @media screen and (max-width 414px)
+              margin-top: 30px
+            .articles__item
+              margin-top: 25px
+              @media screen and (max-width 414px)
+                margin-top: 0
+              .item_img
+                position: relative
+                display: flex
+                justify-content: flex-start
+                a
+                  outline none
+                  img
+                    filter: brightness(0.5)
+                    @media screen and (max-width 1366px)
+                      width: 440px
+                    @media screen and (max-width 600px)
+                      width: 330px
+                    @media screen and (max-width 414px)
+                      width: 220px
+                      height: 172px
+                  .item_col
+                    position absolute
+                    top 7%
+                    left 5%
+                    span
+                      color white
+                      font-size: 14px
+                      font-family: montserratregular
+                  .item_head
+                    position: absolute
+                    bottom: 11%
+                    display: flex
+                    justify-content: flex-start
+                    align-items: center
+                    left 5%
+                    width: 90%
+                    h4
+                      color white
+                      font-size: 24px
+                      font-family: montserratbold
+                      line-height 32px
+                      @media screen and (max-width 600px)
+                        font-size: 18px
+                        line-height 24px
+             .slick-slide
+               width: 408px
+               @media screen and (max-width 1366px)
+                 width: 440px
+               @media screen and (max-width 600px)
+                 width: 330px
+               @media screen and (max-width 414px)
+                 width: 220px
+             .slick-slide + .slick-slide
+               margin-left 16px
+
+
+
+
+
+
+
+//footer
+  //  background-color: $footer-bg
+  //  & .footer-content
+  //    display flex
+  //    align-items center
+  //    & *
+  //      color white
+  //      font-size: 30px
+
+
+
+// Основная тема
+#page[layout=dark]
+  header
+    background-color: $dark_header-bg
+    & .header-content
+      display flex
+      align-items center
+      & *
+        color white
+        font-size: 30px
+  .content-container
+    background-color: $dark_content-bg
+    & .content
+      & *
+        color #333333
+  footer
+    background-color: $dark_footer-bg
+    & .footer-content
+      display flex
+      align-items center
+      & *
+        color white
+        font-size: 30px
+
+// Другие темы
+#page[layout=theme_name]
+  header
+    background-color: $dark_header-bg
+    & .header-content
+      display flex
+      align-items center
+      & *
+        color white
+        font-size: 30px
+  .content-container
+    background-color: $dark_content-bg
+    & .content
+      & *
+        color #333333
+  footer
+    background-color: $dark_footer-bg
+    & .footer-content
+      display flex
+      align-items center
+      & *
+        color white
+        font-size: 30px

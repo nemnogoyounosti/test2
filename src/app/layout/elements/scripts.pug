@@ -1,0 +1,10 @@
+// JS библиотеки
+each script in libs
+    if script.include && script.js !== ''
+        script(src=`${script.js}`)
+
+// Файл с пользовательскими скриптами
+if env.GULP_ENV === 'production'
+    script(src=`js/${jsManifest['app.js']}`)
+else
+    script(src='js/app.js')

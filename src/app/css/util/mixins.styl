@@ -1,0 +1,75 @@
+//- Mixin: Fluid Type
+///
+/// Magic calc + vh to allow text to be fluid between minimum
+/// and maximum breakpoints.
+///
+/// @group typography
+/// @param {variable} $min-font-size [12px] - Minimum font size
+/// @param {variable} $max-font-size [24px] - Maximum font size
+/// @param {variable} $lower-range [420px] - Stop scaling font smaller at this screen resolution
+/// @param {variable} $upper-range [900px] - Stop scaling font larger at this screen resolution
+/// @example
+///   h1 {
+///     @include responsive-type(20px, 48px);
+///   }
+
+responsive-font($min-font-size = 12px, $max-font-size = 21px, $lower-range = $min-content-width, $upper-range = $max-content-width)
+  var1 = $min-font-size
+  var2 = (($max-font-size / ($max-font-size * 0 + 1)) - ($min-font-size / ($min-font-size * 0 + 1)))
+  var3 = (($upper-range / ($upper-range * 0 + 1)) - ($lower-range / ($lower-range * 0 + 1)))
+  --lh: "calc((%s + %s * ( (100vw - %s)  / %s)))" % (var1 unit(var2, '') $lower-range unit(var3, ''))
+  font-size "calc(%s + %s * ( (100vw - %s)  / %s))" % (var1 unit(var2, '') $lower-range unit(var3, ''))
+  line-height calc(var(--lh) - (var(--lh) * 0.10))
+  @media screen and (max-width: $lower-range)
+    font-size: $min-font-size;
+    line-height $min-font-size;
+  @media screen and (min-width: $upper-range)
+    font-size: $max-font-size;
+    line-height: $max-font-size;
+
+require-fonts($font-family, $file-name) {
+  @font-face {
+    font-family: $font-family
+    src: url("../../fonts/" + $file-name + ".eot")
+    src: url("../../fonts/" + $file-name + ".eot?#iefix") format('embedded-opentype'),
+            url("../../fonts/" + $file-name + ".woff") format('woff'),
+            url("../../fonts/" + $file-name + ".ttf") format('truetype'),
+            url("../../fonts/" + $file-name + ".svg#Glyphter") format('svg')
+
+    font-weight: normal
+    font-style: normal
+  }
+}
+
+content-width()
+  $min-gup-size = 10px
+  $max-gup-size = 40px
+  $lower-range = $min-content-width
+  $upper-range = $max-content-width
+  var1 = $min-gup-size
+  var2 = (($max-gup-size / ($max-gup-size * 0 + 1)) - ($min-gup-size / ($min-gup-size * 0 + 1)))
+  var3 = (($upper-range / ($upper-range * 0 + 1)) - ($lower-range / ($lower-range * 0 + 1)))
+  --p: "calc(%s + %s * ( (100vw - %s)  / %s))" % (var1 unit(var2, '') $lower-range unit(var3, ''))
+  --mcw "calc(%s - (var(--p) * 2))" % $min-content-width
+  grid-template-columns: var(--p) minmax(var(--mcw), $max-content-width) var(--p)
+  @media screen and (min-width: $max-content-width)
+    if $max-content-width == 100vw
+      grid-template-columns: 1fr calc(100vw - (100vw - 100%)) 1fr
+    else
+      grid-template-columns: 1fr $max-content-width 1fr
+
+responsive-unit($min-unit = 12px, $max-unit = 21px, $lower-range = 420px, $upper-range = 1440px)
+  var1 = $min-unit
+  var2 = (($max-unit / ($max-unit * 0 + 1)) - ($min-unit / ($min-unit * 0 + 1)))
+  var3 = (($upper-range / ($upper-range * 0 + 1)) - ($lower-range / ($lower-range * 0 + 1)))
+  --unit: "calc((%s + %s * ( (100vw - %s)  / %s)))" % (var1 unit(var2, '') $lower-range unit(var3, ''))
+  @media screen and (max-width: $lower-range)
+    --unit: $min-unit;
+  @media screen and (min-width: $upper-range)
+    --unit: $max-unit;
+
+responsive-var($min-unit = 12px, $max-unit = 21px, $lower-range = 420px, $upper-range = 1440px)
+  var1 = $min-unit
+  var2 = (($max-unit / ($max-unit * 0 + 1)) - ($min-unit / ($min-unit * 0 + 1)))
+  var3 = (($upper-range / ($upper-range * 0 + 1)) - ($lower-range / ($lower-range * 0 + 1)))
+  "calc((%s + %s * ( (100vw - %s)  / %s)))" % (var1 unit(var2, '') $lower-range unit(var3, ''))

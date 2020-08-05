@@ -1,0 +1,13 @@
+mixin phone(phone)
+    -
+        var clearedPhone = phone.replace(/[\s_|\W]+/g,"");
+        if (clearedPhone[0] === '8') clearedPhone = clearedPhone.replace('8', '7')
+    a( class="phone" href=`tel:+${clearedPhone}`)&attributes(attributes)= phone
+
+mixin email(email)
+    a(class="email" href=`mailto:${email}`)&attributes(attributes)= email
+
+mixin img(src, title, altTitle)
+    figure
+        img(src=`${src}` alt=`${altTitle}`)&attributes(attributes)
+        figcaption= title

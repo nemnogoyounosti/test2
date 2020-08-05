@@ -1,0 +1,101 @@
+extends ../layout/main_layout
+
+block content
+    .articles
+        .articles__body
+            .articles__main
+                .articles__up
+                    .articles__up-description
+                        .block-description
+                            h3 Свадьба принца гарри и меган маркл
+                            span 29 статей
+                        .hr
+                            <hr>
+                    .articles__up-slider
+                        .slider
+                            div.item-slider
+                                a(href="#")
+                                    +img('img/link_1.png')
+                                    p 12 громких свадеб десятилетия, которые вошли в историю
+                            div.item-slider
+                                a(href="#")
+                                    +img('img/link_2.png')
+                                    p Пир на весь мир, самые громкие свадьбы звезд 2018 года
+                            div.item-slider
+                                a(href="#")
+                                    +img('img/link_3.png')
+                                    p Уже беременна! Меган Макрл ждет двойню
+                            div.item-slider
+                                a(href="#")
+                                    +img('img/link_2.png')
+                                    p Уже беременна! Меган Макрл ждет двойню
+                .hr_2
+                    <hr>
+                .articles__down
+                    .articles__down-list
+                        .articles__item
+                            .item_img
+                                a(href="#")
+                                    +img('img/link_4.png')
+                                    .item_col
+                                        span 22 статьи
+                                    .item_head
+                                        h4 Интервью знаменитостей
+                        .articles__item
+                            .item_img
+                                a(href="#")
+                                    +img('img/link_5.png')
+                                    .item_col
+                                        span 18 статей
+                                    .item_head
+                                        h4 Личные деньги: как правильно копить и экономить
+                        .articles__item
+                            .item_img
+                                a(href="#")
+                                    +img('img/link_6.png')
+                                    .item_col
+                                        span 31 статья
+                                    .item_head
+                                        h4 Что посмотреть на выходных
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //div Page content
+    //
+    //p Extends UI
+    //+phone('8 (999) 888-77-66')
+    //br
+    //+email('test@mail.net')
+    //div(style="max-width: 150px;")
+    //    +img('img/fig.jpg')(style="width: 100%; object-fit: cover;")
+    //
+    //
+    //br
+    //p.test Custom UI
+    //+burger('no')
+    //br
+    //+arrow('right')
+    //
+    //br
+    //p.show-float-container Show float container
+    //+float-container('down')
+    //
+    //div.ru-rf Responsive Unit + Responsive Font + Responsive Var
+    //
+    //
+    //div(modal-id="#modal-any-id" close-btn-id=".close") Open modal
+    //
+    //+modal-window#modal-any-id
+    //    div.close X
+    //    div Это модальное окно

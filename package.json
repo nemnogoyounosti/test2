@@ -1,0 +1,62 @@
+{
+  "name": "site-wireframe",
+  "siteName": "Site wireframe",
+  "description": "Startup project for html markup",
+  "version": "0.0.3",
+  "scripts": {
+    "tmp": "gulp",
+    "dev": "GULP_ENV='development' gulp",
+    "prod": "GULP_ENV='production' gulp",
+    "glayout": "plop --plopfile utils/generators/layout.js",
+    "gpage": "plop --plopfile utils/generators/page.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/k1ll1n/site-wireframe.git"
+  },
+  "author": "k1ll1n",
+  "license": "MIT",
+  "homepage": "https://github.com/k1ll1n/site-wireframe",
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-decorators": "^7.8.3",
+    "@babel/polyfill": "^7.8.7",
+    "@babel/preset-env": "^7.6.3",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "browser-sync": "^2.26.7",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.18.2",
+    "expose-loader": "^0.7.5",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-base64": "^0.1.3",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-css-url-replace": "^0.1.0",
+    "gulp-if": "^3.0.0",
+    "gulp-imagemin": "^6.1.1",
+    "gulp-load-plugins": "^2.0.1",
+    "gulp-pug": "^4.0.1",
+    "gulp-replace": "^1.0.0",
+    "gulp-rev": "^9.0.0",
+    "gulp-stylus": "^2.7.0",
+    "gulp-uglify-es": "^1.0.4",
+    "imagemin-gifsicle": "^6.0.1",
+    "imagemin-jpegtran": "^6.0.0",
+    "imagemin-optipng": "^7.1.0",
+    "imagemin-svgo": "^7.0.0",
+    "plop": "^2.6.0",
+    "pug": "^2.0.4",
+    "stylus": "^0.54.7",
+    "webpack": "^4.41.2",
+    "webpack-stream": "^5.2.1"
+  },
+  "dependencies": {
+    "jquery": "^3.4.1",
+    "mobx": "^5.15.4"
+  }
+}

@@ -1,0 +1,28 @@
+extends ../layout/dark_layout
+
+block content
+    div Page content
+
+    p Extends UI
+    +phone('8 (999) 888-77-66')
+    br
+    +email('test@mail.net')
+    div(style="max-width: 150px;")
+        +img('img/fig.jpg')(style="width: 100%; object-fit: cover;")
+
+
+    br
+    p Custom UI
+    +burger('no').show-float-container
+    br
+    +arrow('right')
+
+    br
+    p.show-float-container Show float container
+    +float-container('down')
+
+    div.ru-rf Responsive Unit + Responsive Font + Responsive Var
+
+
+
+

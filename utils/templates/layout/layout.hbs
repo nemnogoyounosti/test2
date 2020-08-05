@@ -1,0 +1,41 @@
+include elements/mixins
+include ../templates/parts/extends-ui
+include ../templates/parts/custom-ui
+
+doctype html
+html(class="no-js" lang="ru")
+    head
+        include elements/head
+
+    body
+        include elements/ie
+        div(layout="{{> layoutName }}" {{#if this.isDefaultStyles}}use-defaults-style="yes"{{else}}use-defaults-style="no"{{/if}})#page
+            header
+                section.header-content
+                    block header
+                        {{#if this.isNewHeader}}
+                            include ../templates/default/{{> layoutName }}_header
+                        {{else}}
+                            include ../templates/default/header
+                        {{/if}}
+
+            section.content-container
+                div.content
+                    // HEADER END
+
+                    // CONTENT START
+                    block content
+                    // CONTENT END
+
+                    // FOOTER START
+
+            footer
+                section.footer-content
+                    block footer
+                        {{#if this.isNewFooter}}
+                            include ../templates/default/{{> layoutName }}_footer
+                        {{else}}
+                            include ../templates/default/footer
+                        {{/if}}
+
+        include elements/scripts

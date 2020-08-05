@@ -1,0 +1,48 @@
+/*########### PAGE #############*/
+#page[use-defaults-style=yes]
+  display flex
+  flex-direction column
+  justify-content center
+  /*########### END ##############*/
+
+  /*########### HEADER ###########*/
+  & header
+    height $header-height
+    flex-grow 0
+    display grid
+    content-width()
+    grid-template-areas " . h-content . "
+    & .header-content
+      grid-area h-content
+
+  /*########### END ##############*/
+
+  /*########### BODY #############*/
+  & .content-container
+    min-height "calc((100vh - (%s + %s)) - %s)" % ($header-height $footer-height ($row-gap * 2))
+    flex-grow 1
+    display grid
+    content-width()
+    grid-template-areas " . p-content . "
+    grid-template-rows 100%
+    @media screen and (max-width 480px)
+      display block
+    & .content
+      width: 100%
+      margin-top $row-gap
+      margin-bottom: $row-gap
+      grid-area p-content
+      if $debug
+        background-color: green
+  /*########### END ##############*/
+
+  /*########### FOOTER ###########*/
+  & footer
+    height $footer-height
+    flex-grow 0
+    display grid
+    content-width()
+    grid-template-areas " . f-content . "
+    & .footer-content
+      grid-area f-content
+/*########### END ##############*/

@@ -1,0 +1,51 @@
+mixin meta()
+    if env.GULP_ENV === 'production'
+        meta(name="description" content=`${pjson.description}`)
+        meta(name="msapplication-TileColor", content="#da532c")
+        meta(name="theme-color", content="#ffffff")
+        meta(property="og:type" content="article")
+        meta(property="og:title" content=`${pjson.siteName}`)
+        meta(property="og:description" content=`${pjson.description}`)
+        meta(property="og:url" content="site-url")
+        meta(property="og:image" content="tile-wide.png")
+
+mixin icons()
+    if env.GULP_ENV === 'production'
+        link(rel="shortcut icon" href="/favicon.ico")
+        link(rel="apple-touch-icon", sizes="180x180", href="/apple-touch-icon.png")
+        link(rel="icon", type="image/png", sizes="32x32", href="/favicon-32x32.png")
+        link(rel="icon", type="image/png", sizes="16x16", href="/favicon-16x16.png")
+        link(rel="icon", type="image/png", sizes="192x192", href="/android-chrome-192x192.png")
+        link(rel="icon", type="image/png", sizes="512x512", href="/android-chrome-512x512.png")
+        link(rel="mask-icon", href="/safari-pinned-tab.svg", color="#5bbad5")
+
+mixin otherFiles()
+    if env.GULP_ENV === 'production'
+        link(rel="manifest", href="site.webmanifest")
+        link(rel="author" href="humans.txt")
+
+mixin jsPlugins()
+    if env.GULP_ENV === 'production'
+        script.
+          (function() {
+            let method
+            const noop = function() {
+            }
+            const methods = [
+              'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
+              'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
+              'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
+              'timeline', 'timelineEnd', 'timeStamp', 'trace', 'warn'
+            ]
+            let length = methods.length
+            const console = (window.console = window.console || {})
+
+            while (length--) {
+              method = methods[length]
+
+              // Only stub undefined methods.
+              if (!console[method]) {
+                console[method] = noop
+              }
+            }
+          }())

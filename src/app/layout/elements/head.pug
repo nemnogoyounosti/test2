@@ -1,0 +1,27 @@
++jsPlugins()
+
+meta(charset="utf-8")
+meta(http-equiv="x-ua-compatible" content="ie=edge")
+title= pjson.siteName
+
+meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
++meta()
+
++icons()
+
++otherFiles()
+
+link(rel="stylesheet" href="css/vendor/normalize.css")
+link(rel="stylesheet" href="css/vendor/h5bp.css")
+
+// CSS библиотеки
+each script in libs
+    if script.include && script.css !== ''
+        link(rel="stylesheet" href=`${script.css}`)
+
+
+// Файл с пользовательскими стилями
+if env.GULP_ENV === 'production'
+    link(rel="stylesheet" href=`css/${cssManifest['main.css']}`)
+else
+    link(rel="stylesheet" href='css/main.css')

@@ -1,0 +1,23 @@
+mixin burger(status)
+    div(class="burger" active=`${status}`)&attributes(attributes)
+        span
+        span
+        span
+
+mixin arrow(direction)
+    div(class="arrow" direction=`${direction}`)&attributes(attributes)
+        span
+        span
+
+mixin float-container(from)
+    div(class="float-container" show="no" out-from=`${from}` ss-container)&attributes(attributes)
+        div.float-block
+            div.float-header
+                +arrow(direction=`${from}`)
+            div.float-body
+                block
+
+mixin modal-window()
+    div(class="modal-container")&attributes(attributes)
+        div.modal-window
+            block

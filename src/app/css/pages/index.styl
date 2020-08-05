@@ -1,0 +1,26 @@
+.ru-rf
+  responsive-unit(170px, 300px, 800px)
+  width: var(--unit)
+  --h: responsive-var(100px, 400px)
+  height var(--h)
+  responsive-font(16px, 45px)
+  background-color: gray
+  @media screen and (max-width: $min-content-width)
+    --h: 100px;
+  @media screen and (min-width: $max-content-width)
+    --h: 400px;
+
+
+.modal-window
+  width: 500px
+  height: 300px
+  position relative
+  display flex
+  justify-content center
+  align-items center
+  background-color: #fff
+  & .close
+    position absolute
+    top: 20px
+    right: 20px
+    font-size: 30px

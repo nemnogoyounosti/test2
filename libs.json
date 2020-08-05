@@ -1,0 +1,67 @@
+[
+  {
+    "js": "js/vendor/simple-scrollbar.min.js",
+    "css": "css/vendor/simple-scrollbar.css",
+    "include": false,
+    "url": "https://github.com/buzinas/simple-scrollbar",
+    "description": "Very simple vanilla javascript library for creating a custom scrollbar cross-browser and cross-devices."
+  },
+  {
+    "js": "js/vendor/flickity.pkgd.min.js",
+    "css": "css/vendor/flickity.min.css",
+    "include": false,
+    "url": "https://github.com/metafizzy/flickity",
+    "description": "Touch, responsive, flickable carousels"
+  },
+  {
+    "js": "https://unpkg.com/imask",
+    "css": "",
+    "include": false,
+    "url": "https://github.com/uNmAnNeR/imaskjs",
+    "description": "vanilla javascript input mask"
+  },
+  {
+    "js": "",
+    "css": "https://use.fontawesome.com/releases/v5.5.0/css/all.css",
+    "include": false
+  },
+  {
+    "js": "js/vendor/jquery.actual.min.js",
+    "css": "",
+    "include": false,
+    "url": "https://github.com/dreamerslab/jquery.actual",
+    "description": "Get the actual width/height of invisible DOM elements with jQuery."
+  },
+  {
+    "js": "js/vendor/jquery.magnific-popup.min.js",
+    "css": "css/vendor/magnific-popup.css",
+    "include": false,
+    "url": "https://github.com/dimsemenov/Magnific-Popup",
+    "description": "Fast, light and responsive lightbox plugin, for jQuery and Zepto.js."
+  },
+  {
+    "js": "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js",
+    "css": "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css",
+    "include": false,
+    "url": "https://github.com/Dogfalo/materialize",
+    "description": "Materialize, a CSS Framework based on Material Design https://materializecss.com"
+  },
+  {
+    "js": "",
+    "css": "https://fonts.googleapis.com/icon?family=Material+Icons",
+    "include": false,
+    "description": "Dependency for Materialize Library"
+  },
+  {
+    "js": "js/vendor/slick.js",
+    "css": "css/vendor/slick.css",
+    "include": true,
+    "description": "Dependency for Materialize Library"
+  },
+  {
+    "js": "",
+    "css": "css/vendor/slick-theme.css",
+    "include": true,
+    "description": "Dependency for Materialize Library"
+  }
+]
